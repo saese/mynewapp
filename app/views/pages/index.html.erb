@@ -1,0 +1,16 @@
+<h2> This is the homepage</h2>
+
+<%= link_to "Add a link", new_link_path %>
+
+<ul>
+  <% @links.each do |link| %>
+    <li><%=link.title%></li>
+    <li><%=link.url%></li>
+    <%= link_to "comments", link_path(link) %>
+    <br>
+    <br>
+  <% end %>
+
+</ul>
+
+<%= will_paginate @links %>
